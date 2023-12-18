@@ -303,6 +303,16 @@ section {
   text-align: center;
 }
 
+.details-container-exp {
+  padding: 6.8rem;
+  flex: 1;
+  background: white;
+  border-radius: 1rem;
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: rgb(163, 163, 163);
+  text-align: center;
+}
+
 .section-container {
   gap: 4rem;
   height: 80%;
