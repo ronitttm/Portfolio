@@ -8,7 +8,6 @@ function toggleMenu() {
 const projectsCarousel = document.querySelector(".projects-carousel");
 const projectsNext = document.getElementById("projects-next");
 let projectsIndex = 0;
-let projectsAutoScroll = null;
 
 function scrollProjects() {
   if (!projectsCarousel) return;
@@ -18,18 +17,6 @@ function scrollProjects() {
   cards[projectsIndex].scrollIntoView({ behavior: "smooth", inline: "start", block: "nearest" });
 }
 
-function startProjectAutoScroll() {
-  clearInterval(projectsAutoScroll);
-  projectsAutoScroll = setInterval(scrollProjects, 5000);
-}
-
 if (projectsNext && projectsCarousel) {
-  projectsNext.addEventListener("click", () => {
-    scrollProjects();
-    startProjectAutoScroll();
-  });
-
-  projectsCarousel.addEventListener("mouseenter", () => clearInterval(projectsAutoScroll));
-  projectsCarousel.addEventListener("mouseleave", () => startProjectAutoScroll());
-  startProjectAutoScroll();
+  projectsNext.addEventListener("click", scrollProjects);
 }
