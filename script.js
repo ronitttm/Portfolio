@@ -8,14 +8,13 @@ function toggleMenu() {
 const projectsCarousel = document.querySelector(".projects-carousel");
 const projectsPrev = document.getElementById("projects-prev");
 const projectsNext = document.getElementById("projects-next");
-let projectsIndex = 0;
 
 function scrollProjects(direction = 1) {
   if (!projectsCarousel) return;
-  const cards = projectsCarousel.querySelectorAll(".project-card");
-  if (!cards.length) return;
-  projectsIndex = (projectsIndex + direction + cards.length) % cards.length;
-  cards[projectsIndex].scrollIntoView({ behavior: "smooth", inline: "start", block: "nearest" });
+  projectsCarousel.scrollBy({
+    left: direction * projectsCarousel.clientWidth,
+    behavior: "smooth",
+  });
 }
 
 if (projectsCarousel) {

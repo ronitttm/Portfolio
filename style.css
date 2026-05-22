@@ -394,8 +394,9 @@ article .icon {
 }
 
 .project-card {
-  flex: 0 0 320px;
-  min-width: 320px;
+  flex: 0 0 calc((100% - 3rem) / 3);
+  max-width: 360px;
+  min-width: 280px;
   scroll-snap-align: start;
 }
 
